@@ -60,6 +60,122 @@ class App extends Component {
     }
   }
 
+  calculate(operation) {
+    if (
+      this.state.aValue.trim().length !== 0 &&
+      this.state.bValue.trim().length !== 0 &&
+      this.state.cValue.trim().length !== 0
+    ) {
+      const a = parseFloat(this.state.aValue);
+      const b = parseFloat(this.state.bValue);
+      const c = parseFloat(this.state.cValue);
+
+      switch (operation) {
+        case "add":
+          return this.setState({
+            resultValue: a + b + c
+          });
+        case "subtract":
+          return this.setState({
+            resultValue: a - b - c
+          });
+        case "multiply":
+          return this.setState({
+            resultValue: a * b * c
+          });
+        case "divide":
+          return this.setState({
+            resultValue: a / b / c
+          });
+        default:
+          return alert("Error!");
+      }
+    } else if (
+      this.state.aValue.trim().length !== 0 &&
+      this.state.bValue.trim().length !== 0
+    ) {
+      const a = parseFloat(this.state.aValue);
+      const b = parseFloat(this.state.bValue);
+
+      switch (operation) {
+        case "add":
+          return this.setState({
+            resultValue: a + b
+          });
+        case "subtract":
+          return this.setState({
+            resultValue: a - b
+          });
+        case "multiply":
+          return this.setState({
+            resultValue: a * b
+          });
+        case "divide":
+          return this.setState({
+            resultValue: a / b
+          });
+        default:
+          return alert("Error!");
+      }
+    } else if (
+      this.state.aValue.trim().length !== 0 &&
+      this.state.cValue.trim().length !== 0
+    ) {
+      const a = parseFloat(this.state.aValue);
+      const c = parseFloat(this.state.cValue);
+
+      switch (operation) {
+        case "add":
+          return this.setState({
+            resultValue: a + c
+          });
+        case "subtract":
+          return this.setState({
+            resultValue: a - c
+          });
+        case "multiply":
+          return this.setState({
+            resultValue: a * c
+          });
+        case "divide":
+          return this.setState({
+            resultValue: a / c
+          });
+        default:
+          return alert("Error!");
+      }
+    } else if (
+      this.state.bValue.trim().length !== 0 &&
+      this.state.cValue.trim().length !== 0
+    ) {
+      const b = parseFloat(this.state.bValue);
+      const c = parseFloat(this.state.cValue);
+
+      switch (operation) {
+        case "add":
+          return this.setState({
+            resultValue: b + c
+          });
+        case "subtract":
+          return this.setState({
+            resultValue: b - c
+          });
+        case "multiply":
+          return this.setState({
+            resultValue: b * c
+          });
+        case "divide":
+          return this.setState({
+            resultValue: b / c
+          });
+        default:
+          return alert("Error!");
+      }
+    } else {
+      alert("Hey, both fields are mandatory :)");
+    }
+  }
+
   clearFields() {
     this.setState({
       aValue: "",
@@ -98,9 +214,7 @@ class App extends Component {
                 disabled={this.state.aDisabled}
                 onChangeUserInput={this.handleUserInputA}
               />
-              <Checkbox 
-                
-              />
+              <Checkbox />
 
               <TextBox
                 textBoxClassName={this.state.textBoxNumbersClassName}
@@ -109,9 +223,7 @@ class App extends Component {
                 value={this.state.bValue}
                 onChangeUserInput={this.handleUserInputB}
               />
-              <Checkbox
-
-              />
+              <Checkbox />
 
               <TextBox
                 textBoxClassName={this.state.textBoxNumbersClassName}
@@ -120,9 +232,7 @@ class App extends Component {
                 value={this.state.cValue}
                 onChangeUserInput={this.handleUserInputC}
               />
-              <Checkbox
-
-              />
+              <Checkbox />
             </div>
             <div className={this.state.calcButtonWrapper}>{calcButtons}</div>
             <div className={this.state.resultWrapper}>
