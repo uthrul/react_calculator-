@@ -1,0 +1,27 @@
+div.calculation-buttons > a, 
+div.clear-button > a {
+  width: 148px;    
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-size: 1em;  
+  display: inline-block;
+  letter-spacing: 1px;
+}
+div.calculation-buttons > a {
+  background-color: #3b7fbc;
+  border: 1px solid #234a6d;
+}
+
+div.calculation-buttons > a[disabled] {
+  color: crimson;
+}
+
+div.clear-button > a {
+  background-color: #ce423e;
+  border: 1px solid #6d2421;
+}
